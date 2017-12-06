@@ -1,0 +1,8 @@
+  .blue_background { background-color: #6B92D8; }// #4169E1; }
+  .grey_out { color: #708090; }
+  .medium_width { width: 72px; }
+  .medium_width:hover { pointer: cursor; color: #FF4500; }
+  #button_holder { position: absolute; bottom: 10; }
+
+  #toggle_snow { float: left; }
+  #send_breeze { float: left; }

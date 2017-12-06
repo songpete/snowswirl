@@ -1,0 +1,47 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="lib/snow.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="lib/snow_test.js"></script>
+</head>
+
+<body class="blue_background"></body>
+
+<div id="button_holder">
+  <input type="button" class="medium_width" id="toggle_snow" value="Stop snow"/>
+  <input type="button" class="medium_width" id="send_breeze" value="Breeze"/>
+  <input type="button" class="medium_width" id="pile_up" value="Pile"/>
+  <input type="button" class="medium_width" id="swirl" value="Swirl"/>
+<div>
+
+<script>
+  $(document).ready(function() {
+    snowSwirl.startSnowing();
+
+    $('#toggle_snow').on('click', function() {
+      var $toggle_snow = $(this);
+      $toggle_snow.val($toggle_snow.val() == "Stop snow" ? "Move snow" : "Stop snow");
+      snowSwirl.toggleSnow();
+    });
+
+    $('#send_breeze').on('click', function() {
+      snowSwirl.sendBreeze();
+    });
+
+    $('#swirl').on('click', function() {
+      $(this).val($(this).val() == "Swirl" ? "No swirl" : "Swirl");
+      snowSwirl.toggleSwirl();
+    });
+
+    $('#pile_up').on('click', function() {
+      var $toggle_pile = $(this);
+      $toggle_pile.val($toggle_pile.val() == "Pile" ? "Drop snow" : "Pile");
+      snowSwirl.togglePile();
+    });
+
+    $(window).resize(function() {
+      snowSwirl.windowResize();
+    });
+
+    requestAnimationFrame(snowSwirl.moveSnow);
+  });
+</script>
