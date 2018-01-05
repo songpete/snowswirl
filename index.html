@@ -1,10 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="lib/snow.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="lib/snow_test.js"></script>
+  <title>Snow Swirl</title>
 </head>
-
-<body class="blue_background"></body>
 
 <div id="button_holder">
   <input type="button" class="medium_width" id="toggle_snow" value="Stop snow"/>
@@ -12,6 +13,8 @@
   <input type="button" class="medium_width" id="pile_up" value="Pile"/>
   <input type="button" class="medium_width" id="swirl" value="Swirl"/>
 <div>
+
+<body class="blue_background">
 
 <script>
   $(document).ready(function() {
@@ -41,7 +44,8 @@
     $(window).resize(function() {
       snowSwirl.windowResize();
     });
-
-    requestAnimationFrame(snowSwirl.moveSnow);
   });
 </script>
+
+</body>
+</html>
